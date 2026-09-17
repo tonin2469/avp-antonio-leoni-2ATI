@@ -6,6 +6,7 @@ API em Node.js + Express para cadastro, listagem, consulta, edição e exclusão
 
 - Node.js
 - Express
+- Swagger UI / OpenAPI 3
 - JavaScript ES Modules
 - Testes com Node Test Runner
 
@@ -25,6 +26,18 @@ API em Node.js + Express para cadastro, listagem, consulta, edição e exclusão
    ```text
    http://localhost:3000
    ```
+
+4. Consulte a documentação interativa:
+   ```text
+   http://localhost:3000/api-docs
+   ```
+
+   A especificação OpenAPI também está disponível em:
+   ```text
+   http://localhost:3000/swagger.json
+   ```
+
+O projeto possui um middleware de logging que registra método, rota, status HTTP e duração de cada requisição.
 
 ## Rotas da API
 

@@ -1,9 +1,17 @@
 import express from "express";
+import swaggerUi from "swagger-ui-express";
+import { requestLogger } from "./middleware/requestLogger.js";
+import { swaggerDocument } from "./swagger.js";
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(requestLogger);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.get("/swagger.json", (req, res) => {
+  res.json(swaggerDocument);
+});
 
 const jogos = [
   {
